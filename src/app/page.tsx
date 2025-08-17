@@ -28,7 +28,7 @@ export default function Home() {
               <div className="space-y-4">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   Powering Your
-                  <span className="text-blue-600 block">Digital Future</span>
+                  <span className="text-[#bb0c09] block">Digital Future</span>
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
                   SBS WireOne delivers cutting-edge IT solutions that transform businesses. 

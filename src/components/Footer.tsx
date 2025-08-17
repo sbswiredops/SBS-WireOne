@@ -28,7 +28,7 @@ export default function Footer() {
               <a href="#" className="text-gray-500 hover:text-[#bb0c09] transition-colors">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-gray-500 hover:text-[#bb0c09] transition-colors">
+              <a href="https://www.facebook.com/p/SBS-WireOne-61571632972871/" className="text-gray-500 hover:text-[#bb0c09] transition-colors">
                 <Facebook size={20} />
               </a>
             </div>
@@ -62,17 +62,17 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail size={16} className="text-[#bb0c09]" />
-                <span className="text-gray-700 text-sm">info@sbswireone.com</span>
+                <span className="text-gray-700 text-sm">sbswireoneits@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={16} className="text-[#bb0c09]" />
-                <span className="text-gray-700 text-sm">+1 (555) 123-4567</span>
+                <span className="text-gray-700 text-sm">01886-821225</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin size={16} className="text-[#bb0c09] mt-0.5" />
                 <span className="text-gray-700 text-sm">
-                  123 Tech Street<br />
-                  Silicon Valley, CA 94025
+                  Mohakhali DOHS, <br />
+                  Dhaka, Bangladesh
                 </span>
               </div>
             </div>
@@ -81,7 +81,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-300 mt-8 pt-8 text-center">
           <p className="text-gray-500 text-sm">
-            © 2024 SBS WireOne. All rights reserved.
+            © 2025 SBS WireOne. All rights reserved.
           </p>
         </div>
       </div>

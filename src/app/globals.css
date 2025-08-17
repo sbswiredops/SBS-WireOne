@@ -42,11 +42,11 @@ html {
 
 /* Component styles */
 .primary-button {
-  @apply bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-blue-700 transition-colors duration-200;
+  @apply bg-[#bb0c09] text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-[#a30a08] transition-colors duration-200;
 }
 
 .secondary-button {
-  @apply border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:border-gray-400 transition-colors duration-200;
+  @apply border-2 border-red-800 text-red-800 px-6 py-3 rounded-lg font-semibold hover:border-red-800 transition-colors duration-200;
 }
 
 .section-title {

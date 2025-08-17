@@ -1,11 +1,23 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hash, setHash] = useState('');
+
+  useEffect(() => {
+    // Set initial hash
+    setHash(window.location.hash);
+
+    // Listen for hash changes
+    const onHashChange = () => setHash(window.location.hash);
+    window.addEventListener('hashchange', onHashChange);
+
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -38,7 +50,7 @@ export default function Header() {
                 href={item.href}
                 className="text-gray-700 hover:text-[#bb0c09] transition-colors duration-200 font-medium"
                 style={{
-                  color: window.location.hash === item.href ? '#bb0c09' : undefined,
+                  color: hash === item.href ? '#bb0c09' : undefined,
                 }}
               >
                 {item.name}
@@ -68,7 +80,7 @@ export default function Header() {
                   href={item.href}
                   className="text-gray-700 hover:text-[#bb0c09] transition-colors duration-200 font-medium"
                   style={{
-                    color: window.location.hash === item.href ? '#bb0c09' : undefined,
+                    color: hash === item.href ? '#bb0c09' : undefined,
                   }}
                   onClick={() => setIsMenuOpen(false)}
                 >
