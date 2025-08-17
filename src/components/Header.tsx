@@ -1,10 +1,23 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hash, setHash] = useState('');
+
+  useEffect(() => {
+    // Set initial hash
+    setHash(window.location.hash);
+
+    // Listen for hash changes
+    const onHashChange = () => setHash(window.location.hash);
+    window.addEventListener('hashchange', onHashChange);
+
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -18,10 +31,15 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <h1 className="text-xl sm:text-2xl font-bold text-blue-600">
-              SBS WireOne
-            </h1>
+          <div className="flex-shrink-0 flex items-center space-x-2">
+            <Image
+              src="/logo.png"
+              alt="SBS WireOne Logo"
+              width={120}
+              height={40}
+              className="h-10 w-auto object-contain"
+            />
+            
           </div>
 
           {/* Desktop Navigation */}
@@ -30,7 +48,10 @@ export default function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                className="text-gray-700 hover:text-[#bb0c09] transition-colors duration-200 font-medium"
+                style={{
+                  color: hash === item.href ? '#bb0c09' : undefined,
+                }}
               >
                 {item.name}
               </a>
@@ -57,7 +78,10 @@ export default function Header() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                  className="text-gray-700 hover:text-[#bb0c09] transition-colors duration-200 font-medium"
+                  style={{
+                    color: hash === item.href ? '#bb0c09' : undefined,
+                  }}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

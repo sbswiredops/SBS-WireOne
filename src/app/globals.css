@@ -42,11 +42,11 @@ html {
 
 /* Component styles */
 .primary-button {
-  @apply bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-blue-700 transition-colors duration-200;
+  @apply bg-[#bb0c09] text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-[#a30a08] transition-colors duration-200;
 }
 
 .secondary-button {
-  @apply border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:border-gray-400 transition-colors duration-200;
+  @apply border-2 border-red-800 text-red-800 px-6 py-3 rounded-lg font-semibold hover:border-red-800 transition-colors duration-200;
 }
 
 .section-title {
@@ -71,4 +71,13 @@ html {
 
 .form-input {
   @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200;
+}
+
+/* Add to your globals.css */
+@keyframes spin-slow {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
 }
