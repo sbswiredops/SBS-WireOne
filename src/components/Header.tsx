@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,10 +19,15 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <h1 className="text-xl sm:text-2xl font-bold text-blue-600">
-              SBS WireOne
-            </h1>
+          <div className="flex-shrink-0 flex items-center space-x-2">
+            <Image
+              src="/logo.png"
+              alt="SBS WireOne Logo"
+              width={120}
+              height={40}
+              className="h-10 w-auto object-contain"
+            />
+            
           </div>
 
           {/* Desktop Navigation */}
@@ -30,7 +36,10 @@ export default function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                className="text-gray-700 hover:text-[#bb0c09] transition-colors duration-200 font-medium"
+                style={{
+                  color: window.location.hash === item.href ? '#bb0c09' : undefined,
+                }}
               >
                 {item.name}
               </a>
@@ -57,7 +66,10 @@ export default function Header() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                  className="text-gray-700 hover:text-[#bb0c09] transition-colors duration-200 font-medium"
+                  style={{
+                    color: window.location.hash === item.href ? '#bb0c09' : undefined,
+                  }}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
