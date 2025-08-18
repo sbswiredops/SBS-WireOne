@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 import { 
   ArrowRight, 
   Shield, 
@@ -431,6 +432,32 @@ export default function Home() {
                   On-site Service
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* After Services Section */}
+      <section className="py-20 lg:py-32 bg-gradient-to-br from-[#bb0c09]/10 via-[#e0e7ff] to-[#fff7f6] relative overflow-hidden">
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-48 h-48 bg-gradient-to-br from-[#bb0c09]/30 to-blue-600/20 rounded-full blur-2xl animate-pulse"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="inline-block px-6 py-2 rounded-full bg-[#bb0c09] text-white font-bold text-lg shadow-lg mb-6 animate-bounce">
+              🚀 New Launch!
+            </div>
+            <h2 className="text-4xl font-extrabold text-[#51356e] mb-4 drop-shadow-lg">Shekhabo</h2>
+            <p className="text-xl text-gray-700 mb-8 font-medium">
+              We are launching an innovative Educational Online Platform.<br /><br />
+              <span className="text-[#bb0c09] font-extrabold text-3xl animate-pulse">Coming Soon</span>
+            </p>
+            <div className="flex justify-center">
+              <Image
+                src="/Shekhabo.png"
+                alt="Shekhabo Educational Platform Preview"
+                width={75}
+                height={30}
+                className="rounded-2xl shadow-2xl border-4 border-[#51356e] w-75 h-30 object-cover bg-white animate-fade-in"
+              />
             </div>
           </div>
         </div>
