@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SBS WireOne - Leading IT Solutions Provider",
-  description: "SBS WireOne delivers innovative IT solutions including cloud services, network infrastructure, cybersecurity, and IT consulting to help businesses thrive in the digital age.",
+  title: "SBS WireOne - Think Different, Create Bold, Achieve Beyond",
+  description: "SBS WireOne delivers innovative IT solutions including IT Consulting, Web Development, Managed Services, Property Maintenance and Real Estate Business to help businesses thrive in the digital age.",
 };
 
 export default function RootLayout({
