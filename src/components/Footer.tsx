@@ -49,10 +49,12 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Services</h4>
             <ul className="space-y-2">
-              <li><span className="text-gray-700 text-sm">Cloud Solutions</span></li>
-              <li><span className="text-gray-700 text-sm">Network Infrastructure</span></li>
-              <li><span className="text-gray-700 text-sm">Cybersecurity</span></li>
+              <li><span className="text-gray-700 text-sm">Property Maintenance</span></li>
+              <li><span className="text-gray-700 text-sm">Real Estate Business</span></li>
+              <li><span className="text-gray-700 text-sm">Web Development</span></li>
               <li><span className="text-gray-700 text-sm">IT Consulting</span></li>
+              <li><span className="text-gray-700 text-sm">Managed Services</span></li>
+              <li><span className="text-gray-700 text-sm">Technical Support</span></li>
             </ul>
           </div>
 
