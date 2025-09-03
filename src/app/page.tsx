@@ -191,9 +191,8 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-                  SBS WireOne delivers cutting-edge IT solutions that transform
-                  businesses. From cloud infrastructure to cybersecurity,
-                  we&apos;re your trusted technology partner.
+                  We provide meticulous property care services to keep your properties in their optimal condition and maximize long-term value, 
+                  as well as end-to-end real estate services for purchasing, selling, and holding properties with expert guidances and cares.
                 </p>
                 {/* <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
                   Unlock your potential and go further than ever before.
