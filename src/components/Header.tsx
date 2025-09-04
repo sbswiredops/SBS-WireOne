@@ -32,14 +32,15 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center space-x-2">
-            <Image
-              src="/logo.png"
-              alt="SBS WireOne Logo"
-              width={120}
-              height={40}
-              className="h-10 w-auto object-contain"
-            />
-            
+            <a href="#home">
+              <Image
+                src="/logo.png"
+                alt="SBS WireOne Logo"
+                width={120}
+                height={40}
+                className="h-10 w-auto object-contain"
+              />
+            </a>
           </div>
 
           {/* Desktop Navigation */}
