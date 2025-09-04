@@ -18,8 +18,9 @@ export default function Footer() {
               />
             </div>
             <p className="text-gray-700 text-sm leading-relaxed">
-              Leading IT solutions provider delivering innovative technology services 
-              to help businesses thrive in the digital age.
+              Offering diligent property maintenance services to ensure your properties are in the best condition and 
+              achieve the best results for their long-term value, and end-to-end real estate services to both buy, sell 
+              and hold properties with expert advice and considerations.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-500 hover:text-[#bb0c09] transition-colors">
@@ -51,10 +52,8 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><span className="text-gray-700 text-sm">Property Maintenance</span></li>
               <li><span className="text-gray-700 text-sm">Real Estate Business</span></li>
-              <li><span className="text-gray-700 text-sm">Web Development</span></li>
-              <li><span className="text-gray-700 text-sm">IT Consulting</span></li>
-              <li><span className="text-gray-700 text-sm">Managed Services</span></li>
-              <li><span className="text-gray-700 text-sm">Technical Support</span></li>
+              <li><span className="text-gray-700 text-sm">EdTech Platform</span></li>
+              <li><span className="text-gray-700 text-sm">IT Consultation</span></li>
             </ul>
           </div>
 

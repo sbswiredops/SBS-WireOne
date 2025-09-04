@@ -22,92 +22,92 @@ import {
 
 const reviews = [
   {
-    name: "John Doe",
-    initials: "JD",
-    company: "CTO, TechCorp",
+    name: "Sarah Chen",
+    initials: "SC",
+    company: "Property Investment Manager, Crown Holdings",
     color: "bg-blue-100 text-blue-600",
     review:
-      "SBS WireOne transformed our IT infrastructure completely. Their cloud migration saved us 40% on operational costs while improving performance.",
+      "SBS WireOne transformed our property portfolio management. Their maintenance team is proactive and their real estate expertise is unmatched.",
   },
   {
-    name: "Sarah Miller",
-    initials: "SM",
-    company: "CEO, SecureFinance",
+    name: "Michael Rodriguez",
+    initials: "MR",
+    company: "Real Estate Developer, Urban Vista",
     color: "bg-green-100 text-green-600",
     review:
-      "Outstanding cybersecurity implementation. We haven't had a single security incident since partnering with SBS WireOne 2 years ago.",
+      "From routine inspections to major transactions, SBS WireOne delivers exceptional service every time. Highly recommended for any property needs.",
+  },
+  {
+    name: "Jennifer Thompson",
+    initials: "JT",
+    company: "Operations Director, Metro Commercial",
+    color: "bg-purple-100 text-purple-600",
+    review:
+      "Their facility management saved us thousands in emergency repairs. The scheduled maintenance program is worth every penny.",
+  },
+  {
+    name: "David Park",
+    initials: "DP",
+    company: "Portfolio Manager, Pinnacle Investments",
+    color: "bg-orange-100 text-orange-600",
+    review:
+      "SBS WireOne helped us sell three properties above market value. Their transaction support made the entire process seamless.",
+  },
+  {
+    name: "Lisa Wang",
+    initials: "LW",
+    company: "Property Manager, Riverside Apartments",
+    color: "bg-green-100 text-green-600",
+    review:
+      "Outstanding property maintenance service. They keep our facilities running smoothly and our tenants happy.",
   },
   {
     name: "Robert Johnson",
     initials: "RJ",
-    company: "IT Director, RetailPlus",
-    color: "bg-purple-100 text-purple-600",
-    review:
-      "Their 24/7 support is incredible. Whenever we have an issue, they resolve it quickly and professionally. Highly recommended!",
-  },
-  {
-    name: "Priya Singh",
-    initials: "PS",
-    company: "COO, FinEdge",
-    color: "bg-orange-100 text-orange-600",
-    review:
-      "The web development team at SBS WireOne built us a stunning e-commerce platform. Our sales have doubled since launch.",
-  },
-  {
-    name: "Michael Lee",
-    initials: "ML",
-    company: "Manager, RealEstatePro",
-    color: "bg-green-100 text-green-600",
-    review:
-      "Their real estate business solutions made property management effortless. Great team and great results.",
-  },
-  {
-    name: "Fatima Noor",
-    initials: "FN",
-    company: "Founder, StartupHub",
+    company: "CEO, Heritage Property Group",
     color: "bg-blue-100 text-blue-600",
     review:
-      "SBS WireOne's IT consulting helped us scale our startup efficiently. Highly strategic and supportive.",
+      "The investment consulting from SBS WireOne guided us to profitable property acquisitions. Their market knowledge is impressive.",
   },
   {
-    name: "David Kim",
-    initials: "DK",
-    company: "Director, EduSmart",
+    name: "Amanda Foster",
+    initials: "AF",
+    company: "Facilities Coordinator, TechHub Center",
     color: "bg-purple-100 text-purple-600",
     review:
-      "Their managed services keep our systems running smoothly. We never worry about downtime anymore.",
+      "Reliable, professional, and thorough. SBS WireOne's repair and upkeep services have extended our building's lifespan significantly.",
   },
   {
-    name: "Ayesha Rahman",
-    initials: "AR",
-    company: "CEO, BizGrowth",
+    name: "Kevin Lee",
+    initials: "KL",
+    company: "Building Owner, Downtown Properties",
     color: "bg-orange-100 text-orange-600",
     review:
-      "Excellent property maintenance and support. Our facilities are always in top shape.",
+      "Their property listing expertise got our commercial space leased within weeks. Exceptional marketing and tenant screening.",
   },
   {
-    name: "Carlos Martinez",
-    initials: "CM",
-    company: "CTO, MarketWave",
+    name: "Maria Gonzalez",
+    initials: "MG",
+    company: "Asset Manager, Golden Gate Realty",
     color: "bg-green-100 text-green-600",
     review:
-      "The team is responsive and knowledgeable. SBS WireOne is our go-to for all IT needs.",
+      "SBS WireOne's comprehensive approach to property management gives us peace of mind. They handle everything flawlessly.",
   },
   {
-    name: "Emily Chen",
-    initials: "EC",
-    company: "Product Lead, ShopEase",
+    name: "Thomas Anderson",
+    initials: "TA",
+    company: "Property Owner, Anderson Holdings",
     color: "bg-blue-100 text-blue-600",
     review:
-      "Their SEO and web development services brought us to the top of search results. Fantastic ROI.",
+      "The scheduled inspections caught issues before they became expensive problems. SBS WireOne's preventive approach saves money.",
   },
   {
-    name: "Mohammad Hasan",
-    initials: "MH",
-    company: "IT Manager, HealthFirst",
+    name: "Rachel Kim",
+    initials: "RK",
+    company: "Investment Director, Skyline Capital",
     color: "bg-purple-100 text-purple-600",
     review:
-      "SBS WireOne's technical support is always available and solves issues fast. Great peace of mind.",
+      "From property acquisition to ongoing maintenance, SBS WireOne is our trusted partner. Their expertise drives our success.",
   },
 ];
 
@@ -200,7 +200,15 @@ export default function Home() {
                 {/* 🔹 Moto Section (Added here) */}
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="primary-button relative overflow-hidden group">
+                <button
+                  className="primary-button relative overflow-hidden group"
+                  onClick={() => {
+                    const contactSection = document.getElementById("contact");
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                >
                   <span className="relative z-10 flex items-center">
                     Get Started
                     <ArrowRight
@@ -210,7 +218,15 @@ export default function Home() {
                   </span>
                   <span className="absolute inset-0 bg-[#a30a08] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 </button>
-                <button className="secondary-button relative overflow-hidden group">
+                <button
+                  className="secondary-button relative overflow-hidden group"
+                  onClick={() => {
+                    const servicesSection = document.getElementById("services");
+                    if (servicesSection) {
+                      servicesSection.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                >
                   <span className="relative z-10 flex items-center">
                     Learn More
                     <ArrowRight
@@ -289,30 +305,30 @@ export default function Home() {
                       Buy, sell & manage properties
                     </p>
                   </div>
-                  {/* Web Development */}
-                  <div className="feature-card group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100 rounded-xl">
-                    <Globe
-                      className="mx-auto mb-4 text-blue-600 group-hover:text-[#bb0c09] transition-colors duration-300"
-                      size={40}
-                    />
-                    <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-[#bb0c09] transition-colors">
-                      Web Development
-                    </h3>
-                    <p className="text-sm text-gray-600 group-hover:text-blue-600 transition-colors">
-                      Custom websites & e-commerce
-                    </p>
-                  </div>
-                  {/* 24/7 Support (keep as is) */}
+                  {/* IT Consulting */}
                   <div className="feature-card group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-gradient-to-br hover:from-orange-50 hover:to-orange-100 rounded-xl">
-                    <HeadphonesIcon
+                    <Award
                       className="mx-auto mb-4 text-orange-600 group-hover:text-[#bb0c09] transition-colors duration-300"
                       size={40}
                     />
                     <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-[#bb0c09] transition-colors">
-                      24/7 Support
+                      IT Consulting
                     </h3>
                     <p className="text-sm text-gray-600 group-hover:text-orange-600 transition-colors">
-                      Always available
+                      Strategic IT guidance & process optimization
+                    </p>
+                  </div>
+                  {/* EdTech Platform */}
+                  <div className="feature-card group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-gradient-to-br hover:from-purple-50 hover:to-purple-100 rounded-xl">
+                    <TrendingUp
+                      className="mx-auto mb-4 text-purple-600 group-hover:text-[#bb0c09] transition-colors duration-300"
+                      size={40}
+                    />
+                    <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-[#bb0c09] transition-colors">
+                      EdTech Platform
+                    </h3>
+                    <p className="text-sm text-gray-600 group-hover:text-purple-600 transition-colors">
+                      Bank Jobs, BPO Jobs, BCS Prep
                     </p>
                   </div>
                 </div>
@@ -345,11 +361,10 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-[#bb0c09] transition-colors">
-                      Industry Leadership
+                      Comprehensive Solutions
                     </h3>
                     <p className="text-gray-600">
-                      Recognized as a leading IT solutions provider with
-                      multiple industry awards and certifications.
+                      Complete solution encompassing both property management and real estate transactions, offering customers everything they require under one umbrella for end-to-end property lifecycle management.
                     </p>
                   </div>
                 </div>
@@ -363,11 +378,10 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-[#bb0c09] transition-colors">
-                      Expert Team
+                      Trusted Expertise
                     </h3>
                     <p className="text-gray-600">
-                      Our certified professionals bring deep expertise across
-                      all major technology platforms.
+                      Expert team with in-depth understanding in property care, facility management, and real estate markets to ensure informed decision-making and quality service delivery for optimum asset protection.
                     </p>
                   </div>
                 </div>
@@ -381,11 +395,10 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-[#bb0c09] transition-colors">
-                      Proven Results
+                      Value Optimization
                     </h3>
                     <p className="text-gray-600">
-                      Helping businesses achieve measurable growth through
-                      strategic technology implementation.
+                      Strategic focus on preserving and improving property value through proactive maintenance, skilled market advice and investment consulting to protect and expand your real estate portfolio.
                     </p>
                   </div>
                 </div>
@@ -433,7 +446,7 @@ export default function Home() {
               Comprehensive IT solutions tailored to your business needs
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {/* Property Maintenance */}
             <div className="service-card group cursor-pointer transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-2xl bg-gradient-to-br from-yellow-50 via-[#bb0c09]/10 to-yellow-100 rounded-2xl p-8">
               <div className="bg-yellow-100 rounded-lg p-4 w-fit mb-6 group-hover:animate-pulse transition-all duration-500 ease-in-out">
@@ -494,36 +507,6 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            {/* Web Development */}
-            <div className="service-card group cursor-pointer transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-2xl bg-gradient-to-br from-blue-50 via-[#bb0c09]/10 to-blue-100 rounded-2xl p-8">
-              <div className="bg-blue-100 rounded-lg p-4 w-fit mb-6 group-hover:animate-pulse transition-all duration-500 ease-in-out">
-                <Globe
-                  className="text-blue-600 group-hover:text-[#bb0c09] transition-colors duration-500 ease-in-out"
-                  size={32}
-                />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-[#bb0c09] transition-colors duration-500 ease-in-out">
-                Web Development
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Custom web development services to help your business stand out
-                online and drive digital growth.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-center text-sm text-gray-600">
-                  <CheckCircle size={16} className="text-green-500 mr-2" />
-                  Website Design
-                </li>
-                <li className="flex items-center text-sm text-gray-600">
-                  <CheckCircle size={16} className="text-green-500 mr-2" />
-                  E-commerce Solutions
-                </li>
-                <li className="flex items-center text-sm text-gray-600">
-                  <CheckCircle size={16} className="text-green-500 mr-2" />
-                  SEO Optimization
-                </li>
-              </ul>
-            </div>
             {/* IT Consulting */}
             <div className="service-card group cursor-pointer transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-2xl bg-gradient-to-br from-orange-50 via-[#bb0c09]/10 to-orange-100 rounded-2xl p-8">
               <div className="bg-orange-100 rounded-lg p-4 w-fit mb-6 group-hover:animate-pulse transition-all duration-500 ease-in-out">
@@ -554,63 +537,32 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            {/* Managed Services */}
-            <div className="service-card group cursor-pointer transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-2xl bg-gradient-to-br from-red-50 via-[#bb0c09]/10 to-red-100 rounded-2xl p-8">
-              <div className="bg-red-100 rounded-lg p-4 w-fit mb-6 group-hover:animate-pulse transition-all duration-500 ease-in-out">
-                <Zap
-                  className="text-red-600 group-hover:text-[#bb0c09] transition-colors duration-500 ease-in-out"
+            {/* EdTech Platform */}
+            <div className="service-card group cursor-pointer transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-2xl bg-gradient-to-br from-purple-50 via-[#bb0c09]/10 to-purple-100 rounded-2xl p-8">
+              <div className="bg-purple-100 rounded-lg p-4 w-fit mb-6 group-hover:animate-pulse transition-all duration-500 ease-in-out">
+                <TrendingUp
+                  className="text-purple-600 group-hover:text-[#bb0c09] transition-colors duration-500 ease-in-out"
                   size={32}
                 />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-[#bb0c09] transition-colors duration-500 ease-in-out">
-                Managed Services
+                EdTech Platform
               </h3>
               <p className="text-gray-600 mb-4">
-                Proactive IT management and monitoring to ensure your systems
-                run smoothly 24/7.
+                Empowering professionals with job-ready skills through expert-led courses and live interactive learning experiences.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-center text-sm text-gray-600">
                   <CheckCircle size={16} className="text-green-500 mr-2" />
-                  Proactive Monitoring
+                  Bank Jobs
                 </li>
                 <li className="flex items-center text-sm text-gray-600">
                   <CheckCircle size={16} className="text-green-500 mr-2" />
-                  Backup Solutions
+                  BPO Jobs
                 </li>
                 <li className="flex items-center text-sm text-gray-600">
                   <CheckCircle size={16} className="text-green-500 mr-2" />
-                  Disaster Recovery
-                </li>
-              </ul>
-            </div>
-            {/* Technical Support */}
-            <div className="service-card group cursor-pointer transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-2xl bg-gradient-to-br from-indigo-50 via-[#bb0c09]/10 to-indigo-100 rounded-2xl p-8">
-              <div className="bg-indigo-100 rounded-lg p-4 w-fit mb-6 group-hover:animate-pulse transition-all duration-500 ease-in-out">
-                <HeadphonesIcon
-                  className="text-indigo-600 group-hover:text-[#bb0c09] transition-colors duration-500 ease-in-out"
-                  size={32}
-                />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-[#bb0c09] transition-colors duration-500 ease-in-out">
-                Technical Support
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Round-the-clock technical support to keep your business running
-                without interruption.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-center text-sm text-gray-600">
-                  <CheckCircle size={16} className="text-green-500 mr-2" />
-                  24/7 Help Desk
-                </li>
-                <li className="flex items-center text-sm text-gray-600">
-                  <CheckCircle size={16} className="text-green-500 mr-2" />
-                  Remote Support
-                </li>
-                <li className="flex items-center text-sm text-gray-600">
-                  <CheckCircle size={16} className="text-green-500 mr-2" />
-                  On-site Service
+                  BCS Prep
                 </li>
               </ul>
             </div>
