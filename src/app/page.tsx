@@ -113,6 +113,15 @@ const reviews = [
 
 export default function Home() {
   const [current, setCurrent] = useState(0);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<null | "success" | "error">(null);
 
   // Auto-slide effect
   useEffect(() => {
@@ -125,6 +134,56 @@ export default function Home() {
   const nextReview = () => setCurrent((current + 1) % reviews.length);
   const prevReview = () =>
     setCurrent((current - 1 + reviews.length) % reviews.length);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // Replace with your actual Google Apps Script URL
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzOYYMW0v1K0JpkCmk1zPQuQe2g2mF3g_pfkuuIiAFpylPNkIhDfZoNgoGOtRbAiozZ0A/exec';
+
+      // Use FormData for Google Apps Script (no-cors)
+      const formDataToSend = new FormData();
+      formDataToSend.append('firstName', formData.firstName);
+      formDataToSend.append('lastName', formData.lastName);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('message', formData.message);
+      formDataToSend.append('timestamp', new Date().toISOString());
+
+      await fetch(scriptURL, {
+        method: 'POST',
+        body: formDataToSend,
+        mode: 'no-cors' // Required for Google Apps Script
+      });
+
+      // With no-cors, we can't read the response, so we assume success
+      setSubmitStatus('success');
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -191,7 +250,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-                  We provide meticulous property care services to keep your properties in their optimal condition and maximize long-term value, 
+                  We provide meticulous property care services to keep your properties in their optimal condition and maximize long-term value,
                   as well as end-to-end real estate services for purchasing, selling, and holding properties with expert guidances and cares.
                 </p>
                 {/* <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
@@ -695,6 +754,19 @@ export default function Home() {
               <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-[#bb0c09] flex items-center justify-center shadow-lg border-4 border-white animate-bounce z-20">
                 <HeadphonesIcon className="text-white" size={32} />
               </div>
+
+              {/* Submission Status Messages */}
+              {submitStatus === "success" && (
+                <div className="mb-6 p-4 bg-green-100 text-green-700 rounded-lg">
+                  Thank you for your message! We&#39;ll get back to you soon.
+                </div>
+              )}
+              {submitStatus === "error" && (
+                <div className="mb-6 p-4 bg-red-100 text-red-700 rounded-lg">
+                  Sorry, there was an error sending your message. Please try again or contact us directly.
+                </div>
+              )}
+
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div className="space-y-8">
                   <div>
@@ -750,46 +822,68 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                {/* Animated Contact Form */}
+                {/* Updated Contact Form */}
                 <div className="space-y-6">
-                  <form className="space-y-6">
+                  <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <input
                         type="text"
+                        name="firstName"
                         placeholder="First Name"
+                        value={formData.firstName}
+                        onChange={handleInputChange}
+                        required
                         className="form-input bg-gradient-to-br from-[#fff7f6] via-[#ffe3e0] to-[#f3f4f6] border border-[#bb0c09]/40 focus:border-[#bb0c09] rounded-lg transition-all duration-300 focus:scale-105"
                       />
                       <input
                         type="text"
+                        name="lastName"
                         placeholder="Last Name"
+                        value={formData.lastName}
+                        onChange={handleInputChange}
+                        required
                         className="form-input bg-gradient-to-br from-[#fff7f6] via-[#ffe3e0] to-[#f3f4f6] border border-[#bb0c09]/40 focus:border-[#bb0c09] rounded-lg transition-all duration-300 focus:scale-105"
                       />
                     </div>
                     <input
                       type="email"
+                      name="email"
                       placeholder="Email Address"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
                       className="form-input bg-gradient-to-br from-[#fff7f6] via-[#ffe3e0] to-[#f3f4f6] border border-[#bb0c09]/40 focus:border-[#bb0c09] rounded-lg transition-all duration-300 focus:scale-105"
                     />
                     <input
                       type="tel"
+                      name="phone"
                       placeholder="Phone Number"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       className="form-input bg-gradient-to-br from-[#fff7f6] via-[#ffe3e0] to-[#f3f4f6] border border-[#bb0c09]/40 focus:border-[#bb0c09] rounded-lg transition-all duration-300 focus:scale-105"
                     />
                     <textarea
+                      name="message"
                       placeholder="Tell us about your project..."
                       rows={4}
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
                       className="form-input resize-none bg-gradient-to-br from-[#fff7f6] via-[#ffe3e0] to-[#f3f4f6] border border-[#bb0c09]/40 focus:border-[#bb0c09] rounded-lg transition-all duration-300 focus:scale-105"
                     ></textarea>
                     <button
                       type="submit"
-                      className="primary-button w-full justify-center relative overflow-hidden group transition-all duration-300"
+                      disabled={isSubmitting}
+                      className="primary-button w-full justify-center relative overflow-hidden group transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                       <span className="relative z-10 flex items-center">
-                        Send Message
-                        <ArrowRight
-                          size={20}
-                          className="ml-2 group-hover:translate-x-1 transition-transform duration-300"
-                        />
+                        {isSubmitting ? "Sending..." : "Send Message"}
+                        {!isSubmitting && (
+                          <ArrowRight
+                            size={20}
+                            className="ml-2 group-hover:translate-x-1 transition-transform duration-300"
+                          />
+                        )}
                       </span>
                       <span className="absolute inset-0 bg-[#bb0c09] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     </button>
