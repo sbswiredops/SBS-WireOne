@@ -150,7 +150,7 @@ export default function Home() {
 
     try {
       // Replace with your actual Google Apps Script URL
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbzOYYMW0v1K0JpkCmk1zPQuQe2g2mF3g_pfkuuIiAFpylPNkIhDfZoNgoGOtRbAiozZ0A/exec';
+      const scriptURL = 'https://script.google.com/macros/s/AKfycby0yNtVwe0G5r0nNvTImNK4y-cXKwLgsEPyi_m3e1JDe_kQvaQs6AWZW5Vv_DSkEgAH/exec';
 
       // Use FormData for Google Apps Script (no-cors)
       const formDataToSend = new FormData();
