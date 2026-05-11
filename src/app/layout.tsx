@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "WE ARE scammer",
-  description: "Thank for joining us.",
+  title: "Your One-Stop IT Solutions Company",
+  description: "Book a session now!.",
 };
 
 export default function RootLayout({
